@@ -1,0 +1,14 @@
+name: build&deploy
+on: push
+jobs:
+ get_val:
+
+ build:
+
+ deploy_e1:
+
+ deploy_e2:
+
+ deploy_e3:
+ 
+

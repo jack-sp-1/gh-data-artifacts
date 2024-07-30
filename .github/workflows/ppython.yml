@@ -24,8 +24,11 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: runn
+        id: runn      
         env:
           AZURE_SECRET_TOKEN: ${{ secrets.AZURE_SECRET_TOKEN }}
-        run: python -c "import sys; print(sys.version) "
+        run: python -c "import sys; print(sys.version) ;print(f'::set-output name=aaaa::5')"
         #echo "::set-output name=aaaa::world"
         #python .github/workflows/example.py
+      - name: Output filename
+        run: echo "${steps.runn.outputs.aaa}"  

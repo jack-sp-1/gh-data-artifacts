@@ -26,6 +26,6 @@ jobs:
       - name: runn
         env:
           AZURE_SECRET_TOKEN: ${{ secrets.AZURE_SECRET_TOKEN }}
-        run: |
-        echo "::set-output name=aaaa::world"
-        python .github/workflows/example.py
+        run: python -c "import sys; print(sys.version) "
+        #echo "::set-output name=aaaa::world"
+        #python .github/workflows/example.py

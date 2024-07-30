@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
      aaa: ${{ steps.runn.outputs.aaa}}
+     bbb: ${{ steps.runn.outputs.bbb}}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -27,8 +28,11 @@ jobs:
         id: runn      
         env:
           AZURE_SECRET_TOKEN: ${{ secrets.AZURE_SECRET_TOKEN }}
-        run: python -c "import sys; print(sys.version) ;print(f'::set-output name=aaa::5')"
+        run: | 
+        python -c "import sys; print(sys.version) ;print(f'::set-output name=aaa::5')"
         #echo "::set-output name=aaaa::world" 
-        #python .github/workflows/example.py
+        python .github/workflows/example.py
       - name: Output filename
-        run: echo "${{steps.runn.outputs.aaa}}"  
+        run: |
+        echo "${{steps.runn.outputs.aaa}}"
+        echo "${{steps.runn.outputs.bbb}}"  

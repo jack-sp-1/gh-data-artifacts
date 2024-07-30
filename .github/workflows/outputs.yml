@@ -30,7 +30,27 @@ jobs:
       - name: get value
         id: publish
         run: find dist/assets/*.js -type f -execdir echo 'script-file={}' >>$GITHUB_OUTPUT ';'
-        #                                                  ::set-output name=script-file::{}  
+        #                                                  run: echo "::set-output name=script-file::world"
+        # for python   print(f'::set-output name=test_report::{result}')
+        #cmd='echo \"::set-output name= test_report::'+result+'\"'
+        #subprocess.call([str(cmd)], shell=True)
+        #  
+        import uuid
+
+def set_output(name, value):
+    with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
+        print(f'{name}={value}', file=fh)
+
+
+def set_multiline_output(name, value):
+    with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
+        delimiter = uuid.uuid1()
+        print(f'{name}<<{delimiter}', file=fh)
+        print(value, file=fh)
+        print(delimiter, file=fh)
+
+
+
       - name : upload artifacts
         uses: actions/upload-artifact@v3
         with:

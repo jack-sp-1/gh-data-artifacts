@@ -34,5 +34,5 @@ jobs:
         
       - name: Output filename
         run: |
-        #echo "${{steps.runn.outputs.aaa}}"
+        echo "${{steps.runn.outputs.bbb}}"
         echo "${{steps.runn.outputs.bbb}}"  

@@ -33,6 +33,4 @@ jobs:
         #echo "::set-output name=aaaa::world" 
         
       - name: Output filename
-        run: |
-        echo "${{steps.runn.outputs.bbb}}"
-        echo "${{steps.runn.outputs.bbb}}"  
+        run: echo "${{steps.runn.outputs.bbb}}"  

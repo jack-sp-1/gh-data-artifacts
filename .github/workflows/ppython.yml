@@ -31,4 +31,4 @@ jobs:
         #echo "::set-output name=aaaa::world"
         #python .github/workflows/example.py
       - name: Output filename
-        run: echo "${steps.runn.outputs.aaa}"  
+        run: echo "${{steps.runn.outputs.aaa}}"  

@@ -17,6 +17,8 @@ jobs:
     outputs:
      aaa: ${{ steps.runn.outputs.aaa}}
      bbb: ${{ steps.runn.outputs.bbb}}
+     istl_in_e1: ${{ steps.runn.outputs.istl_in_e1s}}
+
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -33,4 +35,5 @@ jobs:
         #echo "::set-output name=aaaa::world" 
         
       - name: Output filename
-        run: echo "${{steps.runn.outputs.bbb}}"  
+        run: echo "${{steps.runn.outputs.istl_in_e1}}"
+

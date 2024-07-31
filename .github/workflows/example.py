@@ -14,7 +14,7 @@ def main():
     istl_in_e2 = data[0]['install_e2']
     istl_in_e3 = data[0]['install_e3']
 
-   f.close() 
+   
   print(f'::set-output name=istl_in_e1::{istl_in_e1}')
 
 

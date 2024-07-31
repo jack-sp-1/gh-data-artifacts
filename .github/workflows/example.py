@@ -11,9 +11,9 @@ def main():
   
   with open('.github/workflows/params.json') as f:
     data = json.load(f)
-    istl_in_e1 = data[0]['install_e1']
-    istl_in_e2 = data[0]['install_e2']
-    istl_in_e3 = data[0]['install_e3']
+    istl_in_e1 = data['install_e1']
+    istl_in_e2 = data['install_e2']
+    istl_in_e3 = data['install_e3']
 
    
   print(f'::set-output name=istl_in_e1::{istl_in_e1}')

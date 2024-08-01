@@ -1,6 +1,10 @@
 name: walk_dir
 
   inputs:
+    walk_type:
+      description: 'what needs to be given'
+      default: ''
+      required: false
     dir_include_regex:
       description: 'to get the data directory'
       default: ''

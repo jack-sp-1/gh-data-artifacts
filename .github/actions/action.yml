@@ -23,7 +23,7 @@ name: walk_dir
       value: ${{ steps.get_default_pwd.outputs.working_directory}}
 
   runs:
-    using: composite
+    using: "composite"
       steps:
         -name: setup deffault working directory
          id: get_default_pwd

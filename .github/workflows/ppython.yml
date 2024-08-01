@@ -62,7 +62,7 @@ jobs:
           echo "${{steps.runn.outputs.istl_in_e3}}"
           echo "install in E3: ${{inputs.environ_install_e1}}"
       - name: checkout
-         uses:  actions/checkout@v2.3.4 # Necessary to access local action
+        uses:  actions/checkout@v3 # Necessary to access local action
       - name : using walking 
         uses: ./.github/actions 
         id: walking

@@ -64,7 +64,7 @@ jobs:
       - name: checkout
         uses:  actions/checkout@v3 # Necessary to access local action
       - name : using walking 
-        uses: .github/actions 
+        uses: ./.github/actions 
         id: walking
         with:
           walk_type: '--return_files'

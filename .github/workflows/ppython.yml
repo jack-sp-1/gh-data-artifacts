@@ -55,5 +55,5 @@ jobs:
       - name: Output filename
         run: |
         echo "${{steps.runn.outputs.istl_in_e3}}"
-        echo "${{inputs.environ_install_e1}}"
+        echo "install in E3: ${{inputs.environ_install_e1}}"
 

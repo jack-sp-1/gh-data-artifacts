@@ -25,7 +25,7 @@ on:
 
       dir_include_regex:
         description: ' directory to be included'
-        default:' '
+        default: ''
         required: True
         type: String  
  

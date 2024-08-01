@@ -1,0 +1,32 @@
+name: walk_dir
+
+  inputs:
+    walk_type:
+      description: 'what needs to be given'
+      default: ''
+      required: false
+    dir_include_regex:
+      description: 'to get the data directory'
+      default: ''
+      required: false
+    file_exclude_regex:
+      description: 'to exclude some files'
+      default: ''
+      required: false
+    dir_exclude_regex:
+      description: 'to exclude some dir'
+      default: ''
+      required: false
+  outputs:
+    result:
+      description: ' tlist of files'
+      value: ${{ steps.get_default_pwd.outputs.working_directory}}
+
+  runs:
+    using: "composite"
+      steps:
+        -name: setup deffault working directory
+         id: get_default_pwd
+         run: |
+           echo "working_directory=$(pwd)" >>$GITHUB_OUTPUT
+           echo "${{inputs.file_exclude_regex}}" 

@@ -23,6 +23,12 @@ on:
         required: true
         type: String
 
+      dir_include_regex:
+        description: ' directory to be included'
+        default:' '
+        required: True
+        type: String  
+ 
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -56,3 +62,12 @@ jobs:
           echo "${{steps.runn.outputs.istl_in_e3}}"
           echo "install in E3: ${{inputs.environ_install_e1}}"
 
+      - name : using walking 
+        uses: /walk_list
+        id: walking
+        with:
+          walk_type: '--return_files'
+          output_delim: ' '
+          dir_include_regex: ${{inputs.dir_include_regex}}
+          file_exclude_regex: '.json'
+          dir_exclude_regex: 'assets'

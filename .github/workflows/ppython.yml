@@ -59,7 +59,8 @@ jobs:
         #python -c "import sys; print(sys.version) ;print(f'::set-output name=aaa::5')";
         #echo "::set-output name=aaaa::world" 
 
-  list:      
+  list:
+    runs-on: ubuntu-latest    
     steps:
       - name: Output filename
         run: |

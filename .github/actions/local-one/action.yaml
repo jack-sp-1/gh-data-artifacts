@@ -29,6 +29,9 @@ name: walk_dir
   runs:
     using: 'composite'
       steps:
+        -name: Checkout Current Repository
+        uses: actions/checkout@v2
+         
         -name: setup deffault working directory
          id: get_default_pwd
          run: |

@@ -1,37 +1,37 @@
 name: walk_dir
 
-  inputs:
-    walk_type:
+inputs:
+  walk_type:
       description: 'what needs to be given'
       default: ''
       required: false
-    output_delim:
+  output_delim:
       description: 'delim'
       default: ''
       required: false  
-    dir_include_regex:
+  dir_include_regex:
       description: 'to get the data directory'
       default: ''
       required: false
-    file_exclude_regex:
+  file_exclude_regex:
       description: 'to exclude some files'
       default: ''
       required: false
-    dir_exclude_regex:
+  dir_exclude_regex:
       description: 'to exclude some dir'
       default: ''
       required: false
-  outputs:
+outputs:
     result:
       description: ' tlist of files'
       value: ${{ steps.get_default_pwd.outputs.working_directory}}
 
-  runs:
+runs:
     using: 'composite'
       steps:
         -name: Checkout Current Repository
         uses: actions/checkout@v2
-         
+
         -name: setup deffault working directory
          id: get_default_pwd
          run: |

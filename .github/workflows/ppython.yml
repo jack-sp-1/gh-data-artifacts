@@ -47,6 +47,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+        with:
+          ref: main
 
       # Runs a single command using the runners shell
       - name: runn
@@ -63,8 +65,10 @@ jobs:
           echo "install in E3: ${{inputs.environ_install_e1}}"
       - name: checkout
         uses:  actions/checkout@v3 # Necessary to access local action
+        with:
+          ref: main
       - name : using walking 
-        uses:   jack-sp-1/gh-first-action/walk_list@v1 
+        uses:   ./.github/actions/local-one 
         id: walking
         with:
           walk_type: '--return_files'

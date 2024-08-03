@@ -29,12 +29,12 @@ outputs:
 runs:
   using: 'composite'
   steps:
-    -name: Checkout Current Repository
-    uses: actions/checkout@v2
+    - name:  Current Repository
+      uses: actions/checkout@v2
 
-    -name: setup deffault working directory
-    id: get_default_pwd
-    run: |
+    - name: setup deffault working directory
+      id: get_default_pwd
+      run: |
            echo "working_directory=$(pwd)" >>$GITHUB_OUTPUT
            echo "${{inputs.file_exclude_regex}}"
-    shell: bash   
+      shell: bash   

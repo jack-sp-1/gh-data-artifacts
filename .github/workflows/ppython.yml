@@ -74,7 +74,7 @@ jobs:
         uses:   ./.github/actions/local-one 
         id: walking
         with:
-          walk_type: '--return_files'
+          walk_type: '--return-files'
           output_delim: ' '
           dir_include_regex: ${{inputs.dir_include_regex}}
           file_exclude_regex: '.json'

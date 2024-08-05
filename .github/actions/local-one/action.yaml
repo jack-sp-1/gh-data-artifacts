@@ -3,7 +3,7 @@ name: walk_dir
 inputs:
   walk_type:
       description: 'what needs to be given'
-      default: ''
+      default: '--return-files'
       required: false
   output_delim:
       description: 'delim'

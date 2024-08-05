@@ -20,7 +20,8 @@ def main():
 
     args = parser.parse_args()
     print(f"args are:{args}: the end>>>>")
-    print(args.accumulate(args.integers))
+    #print(args.accumulate(args.integers))
+    print(sys.argv)
 
 if __name__=='__main__':
     main()

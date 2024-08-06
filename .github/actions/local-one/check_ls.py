@@ -17,6 +17,30 @@ def walking_type(file_type: bool,dir_type: bool) -> str:
     
     return WALK_DIRS
 
+def walk_from_root(root_path, dir_pattern, file_pattern , file_exclude_regex, dir_exclude_regex, ttype) ->list:
+
+    finale=[]
+    if not os.path.exists(root_path):
+        raise Exception("invalid path of root")
+
+    for (root,dirs,files) in os.walk(root_path):
+
+        print("root is:root)
+        
+        rel_dir_from_root = os.path.relpath(root,root_path)
+
+        if dir_exclude_regex='' and re.search(dir_exclude_regex,rel_dir_from_root):
+            print("not required")
+            continue
+            
+                    
+         
+        
+        
+
+
+        
+
 def main():
     parser = argparse.ArgumentParser(
                     prog='llist',
@@ -37,6 +61,8 @@ def main():
         raise Exception("not a valid root")
     
     ttype = walking_type(args.return_files, args.return_dirs)
+
+    data = walk_from_root(args.root_path, args.dir_pattern, args.file_pattern , args.file_exclude_regex, args.dir_exclude_regex, ttype)
     #print(args.accumulate(args.integers))
     #print(sys.argv)
 

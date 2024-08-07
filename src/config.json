@@ -1,0 +1,5 @@
+{
+    "tar_version": "0.0.3-snapshot",
+    "tar_upload_group": "com/mine/resp/",
+    "jar_list":["a.jar"]
+}

@@ -82,7 +82,7 @@ jobs:
 
       - name: list_json
         id: list_json
-        uses: ./github/workflows/get_json.yml
+        uses: ./.github/workflows/get_json.yml
         with:
          input-path: ${{steps.walking.outputs.result}}
 

@@ -79,3 +79,6 @@ jobs:
           dir_include_regex: ${{inputs.dir_include_regex}}
           file_exclude_regex: '.json'
           dir_exclude_regex: 'assets'
+
+      - name : getting_some_val
+        uses:     

@@ -62,7 +62,7 @@ def main():
     parser.add_argument('--root-path', type=str, default=os.getcwd(),help='for root')
     parser.add_argument('--dir-pattern', type=str, default='',help='for root')
     parser.add_argument('--delim', type=str, default=',',help='for root')
-    parser.add_argument('--file_exlude_regex', type=str, default='',help='for root')
+    parser.add_argument('--file_exclude_regex', type=str, default='',help='for root')
     parser.add_argument('--dir_exclude_regex', type=str, default='',help='for root')
     parser.add_argument('--return-files',action='store_true',help='for root')
     parser.add_argument('--return-dirs',action='store_true',help='for root')

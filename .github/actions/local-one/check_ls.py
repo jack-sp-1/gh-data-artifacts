@@ -18,7 +18,7 @@ def walking_type(file_type: bool,dir_type: bool) -> str:
     
     return WALK_DIRS
 
-def walk_from_root(root_path, dir_pattern, file_pattern , file_exclude_regex, dir_exclude_regex, ttype) ->list:
+def walk_from_root(root_path, dir_pattern, file_exclude_regex, dir_exclude_regex, ttype) ->list:
 
     finale=[]
     if not os.path.exists(root_path):
@@ -42,7 +42,7 @@ def walk_from_root(root_path, dir_pattern, file_pattern , file_exclude_regex, di
 
             else:
                 for filename in files:
-                    if re.search(file_pattern, filename):
+                    if not re.search(file_exclude_regex, filename):
                         finale.append(os.path.join(rel_dir_from_root,filename))
     return finale
 
@@ -74,7 +74,7 @@ def main():
     
     ttype = walking_type(args.return_files, args.return_dirs)
 
-    data = walk_from_root(args.root_path, args.dir_pattern, args.file_pattern , args.file_exclude_regex, args.dir_exclude_regex, ttype)
+    data = walk_from_root(args.root_path, args.dir_pattern,  args.file_exclude_regex, args.dir_exclude_regex, ttype)
     #print(args.accumulate(args.integers))
     #print(sys.argv)
 

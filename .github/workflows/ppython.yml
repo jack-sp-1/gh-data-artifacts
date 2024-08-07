@@ -79,3 +79,10 @@ jobs:
           dir_include_regex: ${{inputs.dir_include_regex}}
           file_exclude_regex: '.yaml'
           dir_exclude_regex: 'assets'
+
+      - name: list_json
+        id: list_json
+        uses: ./github/workflows/get_json.yml
+        with:
+         input-path: ${{steps.walking.outputs.result}}
+

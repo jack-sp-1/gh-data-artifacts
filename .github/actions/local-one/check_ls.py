@@ -77,6 +77,9 @@ def main():
     data = walk_from_root(args.root_path, args.dir_pattern,  args.file_exclude_regex, args.dir_exclude_regex, ttype)
     #print(args.accumulate(args.integers))
     #print(sys.argv)
+    final_output = args.delim.join(data)
+    with open(os.environ['GITHUB_OUTPUT'],'a') as output_file:
+        print(f'result_output={final_output}',file=output_file)
 
 if __name__=='__main__':
     main()

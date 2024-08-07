@@ -24,7 +24,7 @@ inputs:
 outputs:
     result:
       description: ' tlist of files'
-      value: ${{ steps.get_default_pwd.outputs.working_directory}}
+      value: ${{ steps.output_ls.outputs.result_output}}
 
 runs:
   using: 'composite'
@@ -50,3 +50,8 @@ runs:
        --dir_exclude_regex="${{inputs.dir_exclude_regex}}" \
        ${{inputs.walk_type}}
       shell: bash 
+
+    - name: print_list
+      id: print_again
+      run:
+      echo "values are ${{steps.output_ls.outputs.result_output}}"  

@@ -33,8 +33,19 @@ def walk_from_root(root_path, dir_pattern, file_pattern , file_exclude_regex, di
             print("not required")
             continue
             
-                    
-         
+        print(f"checking path :{rel_dir_from_root}")
+
+        if re.search(dir_pattern, rel_dir_from_root):
+            if ttype == WALK_DIRS:
+                finale.append(rel_dir_from_root)
+
+            else:
+                for filename in files
+                    if re.search(file_pattern, filename):
+                        finale.append(os.path.join(rel_dir_from_root,filename))
+    return finale
+
+
         
         
 

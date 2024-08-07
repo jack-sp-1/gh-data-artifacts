@@ -53,5 +53,5 @@ runs:
 
     - name: print_list
       id: print_again
-      run:
-      echo "values are ${{steps.output_ls.outputs.result_output}}"  
+      run: echo "values are ${{steps.output_ls.outputs.result_output}}"
+      shell: bash  

@@ -46,7 +46,7 @@ runs:
        --root-path="${{ inputs.root_path!='' && inputs.root_path || steps.get_default_pwd.outputs.working_directory }}" \
        --dir-pattern="${{inputs.dir_include_regex}}" \
        --delim="${{inputs.output_delim}}" \
-       --file_exlude_regex="${{inputs.file_exlude_regex}}" \
+       --file_exclude_regex="${{inputs.file_exclude_regex}}" \
        --dir_exclude_regex="${{inputs.dir_exclude_regex}}" \
        ${{inputs.walk_type}}
       shell: bash 

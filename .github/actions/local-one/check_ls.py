@@ -1,6 +1,7 @@
 import argparse
 import os
 import sys
+import re
 
 WALK_FILES = "files"
 WALK_DIRS = "dirs"
@@ -25,11 +26,11 @@ def walk_from_root(root_path, dir_pattern, file_pattern , file_exclude_regex, di
 
     for (root,dirs,files) in os.walk(root_path):
 
-        print("root is:root)
+        print(f"root is:{root}")
         
         rel_dir_from_root = os.path.relpath(root,root_path)
 
-        if dir_exclude_regex='' and re.search(dir_exclude_regex,rel_dir_from_root):
+        if dir_exclude_regex=='' and re.search(dir_exclude_regex,rel_dir_from_root):
             print("not required")
             continue
             
@@ -40,7 +41,7 @@ def walk_from_root(root_path, dir_pattern, file_pattern , file_exclude_regex, di
                 finale.append(rel_dir_from_root)
 
             else:
-                for filename in files
+                for filename in files:
                     if re.search(file_pattern, filename):
                         finale.append(os.path.join(rel_dir_from_root,filename))
     return finale

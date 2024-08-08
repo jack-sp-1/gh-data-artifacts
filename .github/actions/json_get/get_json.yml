@@ -1,27 +1,5 @@
 name : json_value
 on: workflow_call
- inputs:
-  input-path:
-   description: what path to give
-   required: false
-   default: ''
-   type: string 
-  add_include: 
-   description: to include something
-   required: false
-   default: ''
-   type: string
-
-  add_filter: 
-   description: filter anything
-   required: false
-   default: ''
-   type: string
-
- 
- outputs:
-  matrix:
-   description: stratgy.matrix creagted from json file  
 
 jobs:
   get_json:

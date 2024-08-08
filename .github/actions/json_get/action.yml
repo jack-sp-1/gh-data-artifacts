@@ -2,7 +2,7 @@ name : json_value
 on: workflow_call
 
 jobs:
-  get_json:
+  get_json_li:
     runs-on: ubuntu-latest 
     steps:
     

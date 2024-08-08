@@ -1,0 +1,43 @@
+name : json_value
+on: workflow_call
+ inputs:
+  input-path:
+   description: what path to give
+   required: false
+   default: ''
+   type: string 
+  add_include: 
+   description: to include something
+   required: false
+   default: ''
+   type: string
+
+  add_filter: 
+   description: filter anything
+   required: false
+   default: ''
+   type: string
+
+ 
+ outputs:
+  matrix:
+   description: stratgy.matrix creagted from json file  
+
+jobs:
+  get_json:
+    runs-on: ubuntu-latest 
+    steps:
+    
+    - name:  Current Repository
+      uses: actions/checkout@v2
+
+
+    - name: to get the data
+      run: python json_get.py  ${{inputs.input-path}} ${{inputs.add_include}} ${{inputs.add_filter}}
+      shell: bash
+      id: json_prints
+
+    - name: print_data    
+      run: echo ${{steps.json_prints.outputs.matrix}}
+      shell: bash
+  

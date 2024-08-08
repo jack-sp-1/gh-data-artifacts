@@ -38,5 +38,5 @@ jobs:
 
       name: print_data    
       run: echo ${{steps.json_prints.outputs.matrix}}
-
+      shell: bash
   

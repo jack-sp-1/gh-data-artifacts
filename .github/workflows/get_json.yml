@@ -25,6 +25,7 @@ on: workflow_call
 
 jobs:
   get_json:
+    runs-on: ubuntu-latest 
     steps:
     
     - name:  Current Repository

@@ -26,7 +26,12 @@ on: workflow_call
 jobs:
   get_json:
     steps:
-      name: to get the data
+    
+    - name:  Current Repository
+      uses: actions/checkout@v2
+
+
+    - name: to get the data
       run: python json_get.py  ${{inputs.input-path}} ${{inputs.add_include}} ${{inputs.add_filter}}
       shell: bash
       id: json_prints
